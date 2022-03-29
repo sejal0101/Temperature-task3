@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        *
+        {
+            background-color: #FFF0F5;
+           color: #000000;
+        }
+        label
+        {
+            font-size: 18px;
+        }
+        .container
+        {
+            text-align: center;
+            margin-top: 100px;
+        }
+        input
+        {
+            border-color: #D2B48C;
+           
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
+        }
+        .button
+        {
+            background-color: black;
+            color: #fff;
+            height: auto;
+            width: 200px;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+}
+.h
+{text-decoration-line: underline;}
+    </style>
+</head>
+<body>
+<center><br><br><br><h1 class="h">Temperature Converter</h1></center>
+    <div class="container">
+        
+        <label for="celsius">Celsius :</label>&nbsp;&nbsp;&nbsp;
+        <input id="celsius" type="text" placeholder="Enter Celsius">&nbsp;&nbsp;&nbsp;
+        <button class="button" onclick="convertFahrenheit()">Convert Fahrenheit</button>
+        <br><br>
+
+        <label for="fahrenheit">Fahrenheit :</label>&nbsp;&nbsp;&nbsp;
+        <input id="fahrenheit" type="text" placeholder="Enter Fahrenheit">&nbsp;&nbsp;&nbsp;
+        <button class="button" onclick="convertCelsius()">Convert Celsius</button>
+        <br><br>
+
+        <button class="button" onclick="reset()">Reset</button>
+
+
+    </div>
+
+    <script>
+        const convertFahrenheit = () =>{
+            var celsius = parseFloat(document.querySelector("#celsius").value);
+
+            var fahrenheitResult = (1.8 * celsius)+32;
+            var a = fahrenheitResult.toFixed(2);
+
+            document.querySelector("#celsius").value = celsius;
+            document.querySelector("#fahrenheit").value = a;
+
+        }
+
+        const convertCelsius = () =>{
+            var fahrenheit = parseFloat(document.querySelector("#fahrenheit").value);
+
+            var celsiusResult = (fahrenheit - 32)/1.8;
+            var b = celsiusResult.toFixed(2);
+
+            document.querySelector("#celsius").value = b;
+            document.querySelector("#fahrenheit").value = fahrenheit;
+            
+        }
+
+        const reset = () => {
+            document.querySelector("#celsius").value = " ";
+            document.querySelector("#fahrenheit").value = " ";
+        }
+    </script>
+
+</body>
+</html>
